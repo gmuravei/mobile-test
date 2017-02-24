@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <base href="/">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="bower_components/mobile-angular-ui/dist/css/mobile-angular-ui-base.min.css" />
+  <link rel="stylesheet" href="bower_components/dragular/dist/dragular.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+</head>
+<body ng-controller="MainCtrl">
+<md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="false"
+        md-whiteframe="4">
+
+  <md-toolbar class="md-theme-indigo">
+    <h1 class="md-toolbar-tools">Sidenav Left</h1>
+  </md-toolbar>
+  <md-content layout-padding>
+    <md-list flex>
+      <md-list-item class="md-3-line" ng-click="goTo('animated')">
+        <div class="md-list-item-text" layout="column">
+          <h3>Animated</h3>
+        </div>
+      </md-list-item>
+      <md-list-item class="md-3-line"  ng-click="goTo('native')">
+        <div class="md-list-item-text" layout="column">
+          <h3>Native</h3>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+
+</md-sidenav>
+
+<!-- Sidebars -->
+
+<!--<div class="sidebar sidebar-left">-->
+  <!--<div class="scrollable">-->
+    <!--<h1 class="scrollable-header app-name">My App</h1>-->
+    <!--<div class="scrollable-content">-->
+      <!--<div class="list-group" ui-turn-off='uiSidebarLeft'>-->
+        <!--<a class="list-group-item" href="#!/native">native-->
+          <!--<i class="fa fa-chevron-right pull-right"></i></a>-->
+        <!--<a class="list-group-item" href="#!/animated">animated-->
+          <!--<i class="fa fa-chevron-right pull-right"></i></a>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<div class="app"   md-swipe-right="onSwipeRight()">
+  <!--<div class="navbar navbar-app navbar-absolute-top"><div ui-toggle="uiSidebarLeft" class="btn sidebar-toggle">-->
+    <!--<i class="fa fa-bars"></i> Menu-->
+  <!--</div>Top Navbar</div>-->
+
+  <md-content layout="column" class="relative" layout-fill role="main">
+  <md-toolbar md-scroll-shrink ng-if="true">
+
+    <div class="md-toolbar-tools" layout="row">
+      <div flex="50"  layout="row">
+        <button class="md-button md-default-theme" ng-click="toggleSidenav('left')" hide-gt-md="" aria-label="Menu" tabindex="0">
+          <ng-md-icon icon="menu" class="ng-scope"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path d="M3 18h18v-2H3v2z"></path><path d="M3 13h18v-2H3v2z"></path><path d="M3 6v2h18V6H3z"></path></svg></ng-md-icon>
+          <div class="md-ripple-container"></div></button>
+      </div>
+
+      <div flex="50">
+        <md-checkbox ng-model="scroll" ng-change="operateScroll(scroll)" aria-label="Show scroll bar">
+          Show scroll bar
+        </md-checkbox>
+      </div>
+
+    </div>
+  </md-toolbar>
+  <!--<div class="navbar navbar-app navbar-absolute-bottom">Bottom Navbar</div>-->
+
+  <!-- App body -->
+
+  <div class='app-body'>
+    <div id="app_content" class='app-content'>
+      <ng-view></ng-view>
+    </div>
+  </div>
+</md-content>
+  </div><!-- ~ .app -->
+
+<!-- Modals and Overlays -->
+<div ui-yield-to="modals"></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+  <script src="bower_components/angular-native-dragdrop/draganddrop.min.js"></script>
+  <script src="bower_components/dragular/dist/dragular.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="app.js"></script>
+  <script src="main.ctrl.js"></script>
+
+  <script src="view1/view1.js"></script>
+  <script src="animated/animated.js"></script>
+  <!--<script src="components/version/version.js"></script>-->
+  <!--<script src="components/version/version-directive.js"></script>-->
+  <!--<script src="components/version/interpolate-filter.js"></script>-->
+</body>
+</html>

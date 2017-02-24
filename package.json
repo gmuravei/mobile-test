@@ -1,0 +1,18 @@
+{
+  "name": "mobileTest",
+  "version": "0.0.0",
+  "private": false,
+  "author": "g.muravei",
+  "devDependencies": {
+    "bower": "1.7.7",
+    "express": "4.13.3"
+  },
+  "engines": {
+    "node": "5.1.0",
+    "npm": "3.4.1"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  },
+  "cacheDirectories": ["node_modules"]
+}
