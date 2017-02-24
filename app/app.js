@@ -8,7 +8,6 @@ angular.module('myApp', [
   'ngMaterial',
   'myApp.view1',
   'myApp.animated',
-  'myApp.version',
   'myApp.main'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
