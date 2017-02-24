@@ -14,5 +14,10 @@
   "scripts": {
     "postinstall": "bower install"
   },
-  "cacheDirectories": ["node_modules"]
+  "cacheDirectories": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "bower": "^1.7.7"
+  }
 }
