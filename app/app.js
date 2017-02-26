@@ -8,7 +8,8 @@ angular.module('myApp', [
   'ngMaterial',
   'myApp.view1',
   'myApp.animated',
-  'myApp.main'
+  'myApp.main',
+  'myApp.dragDelayDirective'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.html5Mode(true);
