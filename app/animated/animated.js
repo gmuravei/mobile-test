@@ -9,16 +9,9 @@ angular.module('myApp.animated', ['ngRoute'])
         });
     }])
 
-    .controller('AnimatedCtrl', ['$scope', 'dragularService', function($scope, dragularService) {
+    .controller('AnimatedCtrl', ['$scope', 'dragularService','$timeout', function($scope, dragularService, $timeout) {
         var bool = false;
         dragularService('.dragular-scrollable');
-
-        // $scope.click = function (el) {
-        //     setTimeout(function () {
-	     //        var bool = true;
-        //         angular.element(el.currentTarget).triggerHandler('click')
-        //     },1000)
-        // };
 
         $scope.elems = [
             {
