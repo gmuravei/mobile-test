@@ -6,6 +6,7 @@ angular.module('myApp', [
   'ang-drag-drop',
   'dragularModule',
   'ngMaterial',
+  'ngTouch',
   'myApp.view1',
   'myApp.animated',
   'myApp.main',

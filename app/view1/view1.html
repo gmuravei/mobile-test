@@ -1,5 +1,5 @@
 <div id="show-scroll">
-    <div ng-repeat="elem in elems track by $index"  class="box-content" style="background-color: {{elem.color}}" ui-draggable="true" drag="elem"
+    <div ng-repeat="elem in elems track by $index"  class="box-content" style="background-color: {{elem.color}}" ui-draggable="true" drag-delay drag="elem"
          on-drop-success="dropSuccessHandler($event,$index,elem)"
          ui-on-Drop="onDrop($event,$data,elem)"
     ></div>
